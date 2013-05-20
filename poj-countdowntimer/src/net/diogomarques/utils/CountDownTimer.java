@@ -36,7 +36,8 @@ public abstract class CountDownTimer {
 			public void run() {
 				long now = System.currentTimeMillis();
 				if (now + mCountdownInterval > deadline) {
-					cancel();
+					onFinish();
+					cancel();					
 				} else {
 					onTick(deadline - now);
 				}
